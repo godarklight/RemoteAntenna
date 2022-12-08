@@ -1,0 +1,13 @@
+[Unit]
+Description=Antenna Web
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=yourusername
+WorkingDirectory=/opt/antenna/website
+ExecStart=/opt/antenna/bin/gunicorn -b 10.0.20.6:5000 app:app
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Antenna Driver
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=yourusername
+WorkingDirectory=/opt/antenna/driver
+ExecStart=/opt/antenna/bin/python app.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
